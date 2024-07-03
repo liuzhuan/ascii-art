@@ -54,10 +54,13 @@ function normalizeSize(width, height) {
  * @returns {string}
  */
 function getCharByNumber(num) {
-  const len = charset.value.length
+  const charsetArr = [...charset.value]
+  const len = charsetArr.length
+
   let index = Math.floor((num / 255) * len)
   if (index > len - 1) index = len - 1
-  return charset.value.charAt(index)
+
+  return charsetArr[index]
 }
 
 function handleInputChange(e) {
